@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Title from "../Title.png"
+import Logo from "../logo.png"
 const SearchBar = props => {
     return (
         <div>
             <div>
                 <i class="fab fa-instagram"/>
-                <img src={Title} alt=""/>
+                <img src={logo} alt=""/>
             </div>
             <div>
             <input placeholder="Search" type="text"/>
