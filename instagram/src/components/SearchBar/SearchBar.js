@@ -5,7 +5,7 @@ const SearchBar = props => {
         <div>
             <div>
                 <i class="fab fa-instagram"/>
-                <img src={logo} alt=""/>
+                <img src={Logo} alt=""/>
             </div>
             <div>
             <input placeholder="Search" type="text"/>
