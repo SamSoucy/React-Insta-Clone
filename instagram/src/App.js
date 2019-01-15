@@ -18,13 +18,13 @@ class App extends Component {
   }
 
   componentDidMount(){
-    fetch(dummyData)
-    .then(
-      this.setState({
-        dummyData:dummyData,
-      })
-    )
-    .catch(err => console.log("nooooo"));
+    // fetch(dummyData)
+    // .then(
+      this.setState({dummyData:dummyData});
+  
+    
+    
+    // .catch(err => console.log("nooooo"));
   }
   render() {
     return (
