@@ -9,12 +9,22 @@ class App extends Component {
   constructor(){
     super();
     this.state ={
-      dummyData: dummyData,
+      dummyData: [],
     }
   }
 
   handleChanges = ev => {
     this.setState({[ev.target.name]: ev.target.value});
+  }
+
+  componentDidMount(){
+    fetch(dummyData)
+    .then(
+      this.setState({
+        dummyData:dummyData,
+      })
+    )
+    .catch(err => console.log("nooooo"));
   }
   render() {
     return (
@@ -38,7 +48,7 @@ App.propTypes={
     likes:PropTypes.number,
     thumbnailUrl:PropTypes.string,
     timeStamp:PropTypes.string,
-    username:PropTypes.string,
+    // username:PropTypes.string,
   })
 }
 

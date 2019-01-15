@@ -7,7 +7,7 @@ const Post=props=>{
         <div className="post">
             <div className="post-header">
                 <img src={props.thumbnailUrl} />
-                <p className="font-weight-bold">{props.username}</p>
+                <p><strong>{props.username}</strong></p>
             </div>
             <div className="post-img">
                 <img src={props.imageUrl} alt=""/>

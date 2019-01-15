@@ -18,12 +18,12 @@ class CommentSection extends Component {
             ev.preventDefault();
             this.setState({
                 commentList:[...this.state.commentList,{
-                    username:"test",
+                    username:"newf930",
                     text: this.state.comment
                 }],
                 text:""
             })
-            this.state.comment="";
+            this.setState({comment:""});
             ev.target.firstChild.value="";
         };
         render(){
@@ -34,11 +34,11 @@ class CommentSection extends Component {
                 <i className="far fa-heart"/>
                 <i className="far fa-comment"/>
             </div>
-            <p className="font-weight-bold">{this.props.likes} likes</p>
+            <p><strong>{this.props.likes} likes</strong></p>
             {this.state.commentList.map((comment, i)=>{
                 return <Comment key={i} username={comment.username} text={comment.text}/>}
             )}
-            <p className="time-stamp">{this.props.timeStamp}</p>
+            <p className="time-stamp">{this.props.timestamp}</p>
             
             <form 
           onSubmit={this.addNewComment}
@@ -47,7 +47,7 @@ class CommentSection extends Component {
             onChange={this.handleChanges}
             onSubmit={this.addNewComment}
             name="comment"
-            placeholder="Add a comment..."/>
+            placeholder="Add a comment..."/>, 
             <i className="fas fa-ellipsis-h"/>
         </form>
         </div>

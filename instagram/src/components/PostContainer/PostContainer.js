@@ -8,7 +8,7 @@ const PostContainer = props =>{
     return(
         <div className="post-container card">
         <Post username={props.post.username} thumbnailUrl={props.post.thumbnailUrl} imageUrl={props.post.imageUrl}/>
-        <CommentSection handleChanges={props.post.handlechanges} timeStamp = {props.post.timeStamp} likes={props.post.likes} comments={props.post.comments}/>
+        <CommentSection handleChanges={props.post.handlechanges} timestamp={props.post.timestamp} likes={props.post.likes} comments={props.post.comments}/>
         </div>
     );
 }
@@ -20,7 +20,7 @@ PostContainer.propTypes={
                 username: PropTypes.string,
                 text: PropTypes.string
     })),
-    timeStamp: PropTypes.string,
+    timestamp: PropTypes.string,
     username: PropTypes.string,
     likes: PropTypes.number,
 }
