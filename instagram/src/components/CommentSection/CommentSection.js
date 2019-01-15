@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from "prop-types";
 import Comment from "./Comment"
+import Likes from "./Likes";
 
 class CommentSection extends Component {
     constructor(props){
@@ -30,11 +31,8 @@ class CommentSection extends Component {
 
     return (
         <div className="comment-section">
-            <div className="d=flex action-button">
-                <i className="far fa-heart"/>
-                <i className="far fa-comment"/>
-            </div>
-            <p><strong>{this.props.likes} likes</strong></p>
+            <Likes likes={this.props.likes}/>
+
             {this.state.commentList.map((comment, i)=>{
                 return <Comment key={i} username={comment.username} text={comment.text}/>}
             )}
