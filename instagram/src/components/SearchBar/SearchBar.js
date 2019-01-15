@@ -10,8 +10,8 @@ const SearchBar = props => {
                 <i className="fab fa-instagram"/>
                 <img src={Logo} alt=""/>
             </div>
-            <div classname="ser input">
-            <input placeholder="Search" type="text"/>
+            <div classname="ser ser-input">
+            <input placeholder="&#128269; Search " type="text"/>
             </div>
             <div className="ser sub-logos">
                 <i className="far fa-compass"/>
