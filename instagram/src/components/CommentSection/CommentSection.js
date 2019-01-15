@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from "prop-types";
 import Comment from "./Comment"
-import Likes from "./Likes";
+import LikesFunction from "./Likes";
 
 class CommentSection extends Component {
     constructor(props){
@@ -31,7 +31,7 @@ class CommentSection extends Component {
 
     return (
         <div className="comment-section">
-            <Likes likes={this.props.likes}/>
+            <LikesFunction likes={this.props.likes}/>
 
             {this.state.commentList.map((comment, i)=>{
                 return <Comment key={i} username={comment.username} text={comment.text}/>}
@@ -45,7 +45,7 @@ class CommentSection extends Component {
             onChange={this.handleChanges}
             onSubmit={this.addNewComment}
             name="comment"
-            placeholder="Add a comment..."/>, 
+            placeholder="Add a comment..."/> 
             <i className="fas fa-ellipsis-h"/>
         </form>
         </div>

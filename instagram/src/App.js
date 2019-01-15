@@ -48,7 +48,6 @@ App.propTypes={
     likes:PropTypes.number,
     thumbnailUrl:PropTypes.string,
     timeStamp:PropTypes.string,
-    // username:PropTypes.string,
   })
 }
 

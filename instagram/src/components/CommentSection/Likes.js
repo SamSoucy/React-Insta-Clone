@@ -3,10 +3,10 @@ import React, {Component} from "react";
 class LikesFunction extends Component{
     constructor(props){
         super(props);
-        this.state = (
+        this.state = {
             totalLikes: props.likes,
             likeCount:0
-        )
+        }
     }
 
     addLike = ev =>{
@@ -15,13 +15,15 @@ class LikesFunction extends Component{
             this.setState(prevState =>({likeCount: ++prevState.likeCount}));
             ev.target.classList.remove("far");
             ev.target.classList.add("fas");
+            ev.target.classList.add('red');
         }
 
         else if(this.state.likeCount===1){
             this.setState(prevState =>({totalLikes: --prevState.totalLikes}));
             this.setState(prevState =>({likeCount: --prevState.likeCount}));
-            ev.target.classList.remove("far");
-            ev.target.classList.add("fas");
+            ev.target.classList.add("far");
+            ev.target.classList.remove("fas");
+            ev.target.classList.remove('red');
         }
     }
 
@@ -29,7 +31,7 @@ class LikesFunction extends Component{
         return(
             <div>
                 <div className="d-flex action-button">
-                    <i onClick={this.addLike} className="far fa-heart"/>"
+                    <i onClick={this.addLike} className="far fa-heart"/>
                     <i className="far fa-comment"/> 
                 </div>
                 <p><strong>{this.state.totalLikes} likes</strong></p>
@@ -38,4 +40,4 @@ class LikesFunction extends Component{
     }
 }
 
-export default Likes;
+export default LikesFunction;
