@@ -1,5 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Logo from "../logo.png"
+import PropTypes from "prop-types";
+
+
 const SearchBar = props => {
     return (
             <div className="search-bar">
@@ -10,7 +13,7 @@ const SearchBar = props => {
             <div classname="ser input">
             <input placeholder="Search" type="text"/>
             </div>
-            <div className="sub-logos">
+            <div className="ser sub-logos">
                 <i className="far fa-compass"/>
                 <i className="far fa-heart"/>
                 <i className="far fa-user"/>

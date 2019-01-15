@@ -20,8 +20,8 @@ const CommentSection = props => {
 
 CommentSection.propTypes={
     comments: PropTypes.arrayOf(PropTypes.shape({
-        username:PropTypes.string,
-        text: PropTypes.string
+                username: PropTypes.string,
+                text: PropTypes.string
     })),
     timeStamp: PropTypes.string,
     likes: PropTypes.number,
