@@ -6,7 +6,7 @@ const Post=props=>{
     return(
         <div className="post">
             <div className="post-header">
-                <img scr={props.thumbnailUrl}/>
+                <img src={props.thumbnailUrl} />
                 <p className="font-weight-bold">{props.username}</p>
             </div>
             <div className="post-img">

@@ -14,7 +14,7 @@ class CommentSection extends Component {
         handleChanges =ev =>{
             this.setState({[ev.target.name]: ev.target.value});
         }
-            submitComment = ev =>{
+            addNewComment = ev =>{
             ev.preventDefault();
             this.setState({
                 commentList:[...this.state.commentList,{
@@ -24,7 +24,7 @@ class CommentSection extends Component {
                 text:""
             })
             this.state.comment="";
-            ev.target.firstchild.value="";
+            ev.target.firstChild.value="";
         };
         render(){
 
@@ -41,11 +41,11 @@ class CommentSection extends Component {
             <p className="time-stamp">{this.props.timeStamp}</p>
             
             <form 
-          onSubmit={this.submitComment}
+          onSubmit={this.addNewComment}
           className="add-comment d-flex">
             <input 
             onChange={this.handleChanges}
-            onSubmit={this.submitComment}
+            onSubmit={this.addNewComment}
             name="comment"
             placeholder="Add a comment..."/>
             <i className="fas fa-ellipsis-h"/>
