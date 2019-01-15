@@ -1,20 +1,30 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from "prop-types";
 
 const CommentSection = props => {
     return (
         <div>
             <div>
-                <i class="far fa-heart"/>
-                <i class="far fa-comment"/>
+                <i className="far fa-heart"/>
+                <i className="far fa-comment"/>
             </div>
-            <p>{373} likes</p>
-            {props.comments.map((comment)=>{
-                return <p>{comment.username} {comment.text}</p>
+            <p>{props.likes} likes</p>
+            {props.comments.map((comment, i)=>{
+                return <p key={i}>{comment.username} {comment.text}</p>
             })}
-            <p>2 HOURS AGO</p>
+            <p classname="time-stamp">{props.timeStamp}</p>
             <input placeholder="Add a comment..."/>
         </div>
     )
+}
+
+CommentSection.propTypes={
+    comments: PropTypes.arrayOf(PropTypes.shape({
+        username:PropTypes.string,
+        text: PropTypes.string
+    })),
+    timeStamp: PropTypes.string,
+    likes: PropTypes.number,
 }
 
 export default CommentSection;
