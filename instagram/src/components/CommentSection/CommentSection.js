@@ -24,6 +24,7 @@ class CommentSection extends Component {
                 }],
                 text:""
             })
+            window.localStorage.setItem("comments", JSON.stringify(this.state.commentList));
             this.setState({comment:""});
             ev.target.firstChild.value="";
         };
