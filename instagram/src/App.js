@@ -10,34 +10,59 @@ class App extends Component {
     super();
     this.state ={
       dummyData: [],
+      filteredData:[],
+      search: "",
     }
   }
 
   handleChanges = ev => {
     this.setState({[ev.target.name]: ev.target.value});
+    if(ev.target.name ==="search"){
+      const filtered = this.state.dummyData.filter(post=>{
+        if(post.username.includes(ev.target.value)){
+          return post
+        }
+      });
+      this.setState({filteredData: filtered});
+    }
   }
 
   componentDidMount(){
-    // fetch(dummyData)
-    // .then(
       this.setState({dummyData:dummyData});
-  
-    
-    
-    // .catch(err => console.log("nooooo"));
   }
+
+
+  filterSearch = ev => {
+
+  }
+
+
   render() {
     return (
       <div className="App">
-      <SearchBar />
-      {this.state.dummyData.map((post, i)=>{
-        return <PostContainer handleChanges={this.handleChanges} key={i} post={post}/>
-      })}
-        
-      </div>
+      <SearchBar handleChanges={this.handleChanges} />
+      {this.state.filteredData.length > 0 
+      ? this.state.filteredData.map((post) =>{
+        return  <PostContainer
+        handleChanges={this.handleChanges}
+        key={post.username}
+        post={post}
+        />})
+
+      : this.state.dummyData.map((post) =>{
+        return <PostContainer
+        handleChanges={this.handleChanges}
+        key={post.username}
+        post={
+          this.state.filteredData.length > 0 
+          ? this.state.filteredData
+          : post } />
+        })}
+        </div>
     );
   }
 }
+      
 
 App.propTypes={
   dummydata:PropTypes.shape({

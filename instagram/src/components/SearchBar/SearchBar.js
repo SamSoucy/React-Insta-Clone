@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from "../logo.png"
-import PropTypes from "prop-types";
+
 
 
 const SearchBar = props => {
@@ -11,7 +11,7 @@ const SearchBar = props => {
                 <img src={Logo} alt=""/>
             </div>
             <div classname="ser ser-input">
-            <input placeholder="&#128269; Search " type="text"/>
+            <input placeholder="Search" type="text" name="search" onChange={props.handleChanges}/>
             </div>
             <div className="ser sub-logos">
                 <i className="far fa-compass"/>
