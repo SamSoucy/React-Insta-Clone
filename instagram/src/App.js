@@ -5,33 +5,24 @@ import Login from "./components/Login/Login"
 import authenticate from "./components/authenticate/authenticate";
 
 class App extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state ={
-      username: "",
+      username: props.username,
       password:"",
+      loggedIn: props.loggedIn,
       
     }
   }
-  handleChanges = ev =>{
-    this.setState({[ev.target.name]: ev.target.value});
-  }
-
-  loginSubmit = () => {
-    if(this.state.username && this.state.password){
-      localStorage.setItem("username", `${this.state.username}`);
-      localStorage.setItem("password", `${this.state.password}`);
-    }
-  }
+ 
 
 render() {
     return (
       <div className="App">
-      <Login
-      handleChanges={this.handleChanges}
-      loginSubmit={this.loginSubmit}
+      <PostPage
+      username={this.state.username}
+      logout={this.props.logout}
       />
-      <PostPage/>
         </div>
     );
   }
@@ -39,4 +30,4 @@ render() {
       
 
 
-export default App;
+export default authenticate(App)(Login);
