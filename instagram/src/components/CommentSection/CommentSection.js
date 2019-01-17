@@ -16,7 +16,7 @@ class CommentSection extends Component {
         handleChanges =ev =>{
             this.setState({[ev.target.name]: ev.target.value});
         }
-            addNewComment = ev =>{
+            addNewComment = (ev) =>{
             ev.preventDefault();
             this.setState({
                 commentList:[...this.state.commentList,{
@@ -48,7 +48,6 @@ class CommentSection extends Component {
             onSubmit={this.addNewComment}
             name="comment"
             placeholder="Add a comment..."/> 
-            <i className="fas fa-ellipsis-h"/>
         </form>
         </div>
     )

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Logo from "../logo.png"
 
 class Login extends Component{
     constructor(props){
@@ -25,17 +26,24 @@ class Login extends Component{
     render(){
         return(
             <div className = "App">
-                <form onSubmit={this.loginSubmit}>
-                    Username: <input
+                <form className onSubmit={this.loginSubmit}>
+                    <div className="login-page-logo">
+                    <i className="fab fa-instagram"/>
+                    <img src={Logo} alt=""/>
+                    </div>
+                    <div className="login">
+                    Username: <input className="login-user"
                     type="text"
                     onChange={this.handleChanges}
                     name="username"
                     />
-                    Password:<input
+                    Password:<input className="login-pass"
                     type="text"
                     onChange={this.handleChanges}
                     name="password"/>
-                    <button onClick={this.props.loginSubmit}>Login</button>
+                    </div>
+                    <button className="login-button" onClick={this.props.loginSubmit}>Login</button>
+                    
                 </form>
             </div>
         );

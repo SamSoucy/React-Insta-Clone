@@ -10,7 +10,7 @@ class App extends Component {
     this.state ={
       username: props.username,
       password:"",
-      loggedIn: props.loggedIn,
+      loggedIn: props.loggedIn
       
     }
   }

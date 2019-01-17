@@ -3,9 +3,9 @@ import '../../App.css';
 
 const LogOut = props =>{
     return(
-        <div className="logout position-absolute w-25 bg-info">
-        <h3>Welcome {props.username}</h3>
-        <button onClick={props.logout}>Logout</button>
+        <div className="logout">
+        <h2>Welcome {props.username}</h2> 
+        <button className="button" onClick={props.logout}>Logout</button>
         </div>
     )
 }
