@@ -24,9 +24,6 @@
   .post-img img{
     max-width: 100%;
     height: auto;
-    
-   
-    
   }
 
   .post-container{
@@ -90,17 +87,13 @@
     font-size: 1rem;
     text-align: center;
     margin: 0 auto;
-    
-    
   }
 
   .ser{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    
-    
-}
+  }
 
   .main-logo i{
     width: 25%;
@@ -109,19 +102,13 @@
     text-align: center;
     align-self: center;
     font-size: 2.5rem;
-    /* border-right: 1px solid grey; */
     
   }
 
   .login{
-    /* width: 25%; */
-    /* display: flex; */
     align-items: center;
     justify-content: flex-start;
     width: 604px;
-    /* margin-right:25px;
-    margin-left:25px;  */
-    /* width: 604px; */
     margin: 30px auto;
     text-align: center; 
     align-self: center;
