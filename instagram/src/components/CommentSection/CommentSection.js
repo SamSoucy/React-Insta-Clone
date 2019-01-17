@@ -9,7 +9,7 @@ class CommentSection extends Component {
             this.state ={
                 commentList: props.comments,
                 comment: "",      
-                username: props.username
+                username: "newf930"
             }
 
         }
