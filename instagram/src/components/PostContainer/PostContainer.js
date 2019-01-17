@@ -1,12 +1,21 @@
 import React from 'react';
 import CommentSection from "../CommentSection/CommentSection";
+import styled from 'styled-components'
 import '../../App.css';
 import PropTypes from "prop-types";
 import Post from "./Post"
 
+
+const PostContain = styled.div`
+width: 604px;
+height: auto;
+margin: 30px auto;
+border: 1px solid gray;
+`;
+
 const PostContainer = props =>{
     return(
-        <div className="post-container card">
+        <PostContain className="post-container">
         <Post username={props.post.username} thumbnailUrl={props.post.thumbnailUrl} imageUrl={props.post.imageUrl}/>
         <CommentSection 
         handleChanges={props.post.handlechanges} 
@@ -15,7 +24,7 @@ const PostContainer = props =>{
         comments={props.post.comments} 
         username={props.username}
         />
-        </div>
+        </PostContain>
     );
 }
 

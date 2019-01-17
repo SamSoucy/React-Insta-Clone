@@ -2,6 +2,33 @@ import React, {Component} from 'react';
 import PropTypes from "prop-types";
 import Comment from "./Comment"
 import LikesFunction from "./Likes";
+import styled from 'styled-components'
+
+const ComSec = styled.div`
+width: 95%;
+margin: 0 auto;
+`;
+
+const ComSecP = styled.p`
+margin: 7px 0; 
+`;
+
+const ComSecInput = styled.input`
+    width: 100%;
+    border: 0;
+    padding: 15px 0; 
+    font-size: .9rem;
+`;
+
+const AddCom = styled.form`
+align-items: center;
+justify-content: space-between;
+border-top: 1px solid black;
+`;
+
+const P = styled.p`
+margin:0; 
+`;
 
 class CommentSection extends Component {
     constructor(props){
@@ -9,8 +36,8 @@ class CommentSection extends Component {
             this.state ={
                 commentList: props.comments,
                 comment: "",      
-                username: "newf930"
-            }
+                username: props.username
+            };
 
         }
         handleChanges =ev =>{
@@ -32,24 +59,23 @@ class CommentSection extends Component {
         render(){
 
     return (
-        <div className="comment-section">
+        <ComSec className="comment-section">
             <LikesFunction likes={this.props.likes}/>
 
             {this.state.commentList.map((comment, i)=>{
                 return <Comment key={i} username={comment.username} text={comment.text}/>}
             )}
-            <p className="time-stamp">{this.props.timestamp}</p>
+            <P className="time-stamp">{this.props.timestamp}</P>
             
-            <form 
-          onSubmit={this.addNewComment}
-          className="add-comment d-flex">
-            <input 
+            <AddCom className="add-comment"
+          onSubmit={this.addNewComment}>
+            <ComSecInput 
             onChange={this.handleChanges}
             onSubmit={this.addNewComment}
             name="comment"
             placeholder="Add a comment..."/> 
-        </form>
-        </div>
+        </AddCom>
+        </ComSec>
     )
     }
 }

@@ -4,13 +4,14 @@ import PostPage from "./components/PostContainer/PostPage";
 import Login from "./components/Login/Login"
 import authenticate from "./components/authenticate/authenticate";
 
+
 class App extends Component {
   constructor(props){
     super(props);
     this.state ={
       username: props.username,
       password:"",
-      loggedIn: props.loggedIn
+      loggedIn: props.loggedIn,
       
     }
   }

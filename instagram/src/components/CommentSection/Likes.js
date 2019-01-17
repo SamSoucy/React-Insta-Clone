@@ -1,4 +1,14 @@
 import React, {Component} from "react";
+import styled from 'styled-components'
+
+const ActButt = styled.div`
+    font-size: 1.5rem;
+    margin: 10px 0;
+`;
+
+const ActButtI = styled.i`
+    margin: 0 10px 0 0;
+`;
 
 class LikesFunction extends Component{
     constructor(props){
@@ -30,10 +40,10 @@ class LikesFunction extends Component{
     render(){
         return(
             <div>
-                <div className="d-flex action-button">
-                    <i onClick={this.addLike} className="far fa-heart"/>
-                    <i className="far fa-comment"/> 
-                </div>
+                <ActButt className="action-button">
+                    <ActButtI onClick={this.addLike} className="far fa-heart"/>
+                    <ActButtI className="far fa-comment"/> 
+                </ActButt>
                 <p><strong>{this.state.totalLikes} likes</strong></p>
             </div>
         )

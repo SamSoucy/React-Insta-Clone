@@ -7,8 +7,8 @@ class extends React.Component{
         this.state = {
             username:"",
             password:"",
-            loggedIn: false,        
-        }
+            loggedIn: false      
+        };
     }
 
     componentDidMount(){
