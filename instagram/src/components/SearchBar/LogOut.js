@@ -16,9 +16,9 @@ font-size:1rem;
 
 const LogOut = props =>{
     return(
-        <LogOutPage className="logout">
+        <LogOutPage>
         <h2>Hello! {props.username}</h2> 
-        <LogOutButton className="button" onClick={props.logout}>Logout</LogOutButton>
+        <LogOutButton onClick={props.logout}>Logout</LogOutButton>
         </LogOutPage>
     )
 }

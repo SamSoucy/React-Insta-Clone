@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import Post from "./Post"
 
 
+
 const PostContain = styled.div`
 width: 604px;
 height: auto;
@@ -15,7 +16,7 @@ border: 1px solid gray;
 
 const PostContainer = props =>{
     return(
-        <PostContain className="post-container">
+        <PostContain >
         <Post username={props.post.username} thumbnailUrl={props.post.thumbnailUrl} imageUrl={props.post.imageUrl}/>
         <CommentSection 
         handleChanges={props.post.handlechanges} 

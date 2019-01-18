@@ -13,13 +13,13 @@ const PostPageHead = styled.div`
     align-items: center;
     justify-content: flex-start;
     height: 75px;
-`;
 
-const PostPageHeadImg = styled.img`
-    border-radius: 50%;
-    max-width: 100%;
-    height: 35px;
-    margin: 10px;
+    img{
+        border-radius: 50%;
+        max-width: 100%;
+        height: 35px;
+        margin: 10px;
+    }
 `;
 
 const PostImg = styled.img`
@@ -31,9 +31,9 @@ height: auto;
 
 const Post=props=>{
     return(
-        <PostPage className="post">
-            <PostPageHead className="post-header">
-                <PostPageHeadImg src={props.thumbnailUrl} alt="thumbnail" />
+        <PostPage>
+            <PostPageHead>
+                <img src={props.thumbnailUrl} alt="thumbnail" />
                 <p><strong>{props.username}</strong></p>
             </PostPageHead>
             <div>

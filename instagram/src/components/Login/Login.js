@@ -3,18 +3,18 @@ import Logo from "../logo.png"
 import styled from 'styled-components'
 
 const LoginPage = styled.div`
-align-items: center;
-justify-content: flex-start;
-width: 604px;
-margin: 30px auto;
-text-align: center; 
-align-self: center;
-font-size: 2.5rem;
-border-bottom: 1px solid black;
-`;
+    align-items: center;
+    justify-content: flex-start;
+    width: 604px;
+    margin: 30px auto;
+    text-align: center; 
+    align-self: center;
+    font-size: 2.5rem;
+    border-bottom: 1px solid black;
 
-const LoginUser = styled.input`
-font-size: 2.5rem;
+    input{
+        font-size: 2.5rem; 
+    }
 `;
 
 const LoginPass = styled.input`
@@ -22,16 +22,16 @@ const LoginPass = styled.input`
     margin-bottom: 5%;
 `;
 const LoginButton = styled.button`
-display: flex;
-align-items: center;
-justify-content: center;
-width: 400px;
-margin: 30px auto;
-border: 1px solid black;
-text-align: center; 
-align-self: center;
-font-size: 2rem;
-border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    margin: 30px auto;
+    border: 1px solid black;
+    text-align: center; 
+    align-self: center;
+    font-size: 2rem;
+    border-radius: 3px;
 `;
 
 const LoginPageLogo = styled.div`
@@ -43,14 +43,16 @@ const LoginPageLogo = styled.div`
     text-align: center;
     align-self: center;
     font-size: 2.5rem;
+
+    img{
+        height: 40px;
+        max-width: 75%;
+        margin-left: 25px;
+        margin-top: 10px;
+    }
 `;
 
-const LoginPageLogoImg = styled.img`
-height: 40px;
-max-width: 75%;
-margin-left: 25px;
-margin-top: 10px;
-`;
+
 
 class Login extends Component{
     constructor(props){
@@ -79,22 +81,22 @@ class Login extends Component{
         return(
             <div className = "App">
                 <form className onSubmit={this.loginSubmit}>
-                    <LoginPageLogo className="login-page-logo">
+                    <LoginPageLogo>
                     <i className="fab fa-instagram"/>
-                    <LoginPageLogoImg src={Logo} alt=""/>
+                    <img src={Logo} alt=""/>
                     </LoginPageLogo>
-                    <LoginPage className="login">
-                    Username: <LoginUser className="login-user"
+                    <LoginPage>
+                    Username: <input className="login-user"
                     type="text"
                     onChange={this.handleChanges}
                     name="username"
                     />
-                    Password:<LoginPass className="login-pass"
+                    Password:<LoginPass 
                     type="text"
                     onChange={this.handleChanges}
                     name="password"/>
                     </LoginPage>
-                    <LoginButton className="login-button" onClick={this.props.loginSubmit}>Login</LoginButton>
+                    <LoginButton onClick={this.props.loginSubmit}>Login</LoginButton>
                     
                 </form>
             </div>

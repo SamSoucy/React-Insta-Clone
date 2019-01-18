@@ -5,30 +5,28 @@ import LikesFunction from "./Likes";
 import styled from 'styled-components'
 
 const ComSec = styled.div`
-width: 95%;
-margin: 0 auto;
-`;
+    width: 95%;
+    margin: 0 auto;
 
-const ComSecP = styled.p`
-margin: 7px 0; 
-`;
-
-const ComSecInput = styled.input`
-    width: 100%;
-    border: 0;
-    padding: 15px 0; 
-    font-size: .9rem;
+        p{
+            margin: 7px 0; 
+        }
 `;
 
 const AddCom = styled.form`
-align-items: center;
-justify-content: space-between;
-border-top: 1px solid black;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid black;
+
+        input{
+            width: 100%;
+            border: 0;
+            padding: 15px 0; 
+            font-size: .9rem;
+        }
 `;
 
-const P = styled.p`
-margin:0; 
-`;
+
 
 class CommentSection extends Component {
     constructor(props){
@@ -36,7 +34,7 @@ class CommentSection extends Component {
             this.state ={
                 commentList: props.comments,
                 comment: "",      
-                username: props.username
+                username: "newf930"
             };
 
         }
@@ -59,17 +57,16 @@ class CommentSection extends Component {
         render(){
 
     return (
-        <ComSec className="comment-section">
+        <ComSec>
             <LikesFunction likes={this.props.likes}/>
 
             {this.state.commentList.map((comment, i)=>{
                 return <Comment key={i} username={comment.username} text={comment.text}/>}
             )}
-            <P className="time-stamp">{this.props.timestamp}</P>
-            
-            <AddCom className="add-comment"
+            <p>{this.props.timestamp}</p>
+            <AddCom
           onSubmit={this.addNewComment}>
-            <ComSecInput 
+            <input 
             onChange={this.handleChanges}
             onSubmit={this.addNewComment}
             name="comment"
